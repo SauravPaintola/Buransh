@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import Head from "next/head";
 
 const Page = () => {
   const form = useRef();
@@ -30,6 +31,47 @@ const Page = () => {
 
   return (
     <section className="bg-white">
+      <Head>
+        <title>NGO Registration | Buransh Foundation</title>
+        <meta
+          name="description"
+          content="Register with the Buransh Foundation to become a part of our mission to empower the people of Uttarakhand. Provide your details to get involved."
+        />
+        <meta
+          name="keywords"
+          content="NGO Registration, Buransh Foundation, Uttarakhand, Volunteer, Empowerment, Community, Education, Registration Form"
+        />
+        <meta
+          property="og:title"
+          content="NGO Registration | Buransh Foundation"
+        />
+        <meta
+          property="og:description"
+          content="Join the Buransh Foundation by filling out the registration form. Be part of our mission to uplift the people of Uttarakhand."
+        />
+        <meta
+          property="og:url"
+          content="https://www.buranshfoundation.in/register" // Replace with the actual registration page URL
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content="https://www.buranshfoundation.in/logo.jpg" // Replace with an appropriate image URL
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="NGO Registration | Buransh Foundation"
+        />
+        <meta
+          name="twitter:description"
+          content="Register with the Buransh Foundation and become a volunteer in our mission to make a difference in Uttarakhand."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.buranshfoundation.in/logo.jpg" // Replace with an appropriate image URL
+        />
+      </Head>
       <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
         {status === "success" ? (
           <div className="text-center">
@@ -55,7 +97,8 @@ const Page = () => {
               NGO Registration Form
             </h2>
             <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 sm:text-xl">
-              Register your NGO with us. Provide the necessary details below.
+              Register yourself with our NGO. Provide the necessary details
+              below.
             </p>
             <form ref={form} onSubmit={sendEmail} className="space-y-8">
               <div>

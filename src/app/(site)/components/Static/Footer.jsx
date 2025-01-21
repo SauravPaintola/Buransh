@@ -7,10 +7,10 @@ const LINKS = [
     title: "About Us",
     items: [
       { text: "About Us", href: "/about" },
-      { text: "Our Vision and Mission", href: "/about" },
+      { text: "Our Vision and Mission", href: "/about#mission" },
       {
         text: "Inspiration – The Story of Hope",
-        href: "https://docs.google.com/document/d/1d9jeHlzW9-1CtiC-eR2Apks9c0h7sNdM/edit?usp=sharing&ouid=111722866219266762425&rtpof=true&sd=true",
+        href: "/story",
       },
     ],
   },
@@ -18,8 +18,8 @@ const LINKS = [
     title: "Our Work",
     items: [
       { text: "Our Events", href: "/gallery" },
-      { text: "Explore Our Culture", href: "/region/kumaon" },
-      { text: "Handicrafts", href: "/region/garhwal" },
+      { text: "Explore Our Culture Kumaon", href: "/region/kumaon" },
+      { text: "Explore Our Culture Garhwal", href: "/region/garhwal" },
     ],
   },
   {

@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { GlobeAsiaAustraliaIcon } from "@heroicons/react/24/solid";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 // Define animation variants for each slide
 const textVariants = {
@@ -26,20 +27,49 @@ const buttonVariants = {
 
 const slidesContent = [
   {
-    title: "“सशक्त समाज सम्पन्न उत्तराखंड”",
+    title: (
+      <div>
+        <span className="text-4xl lg:text-7xl font-bold">“सशक्त समाज</span>
+        <br />
+        <span className="text-4xl lg:text-7xl font-bold">
+          &nbsp;सम्पन्न&nbsp;उत्तराखंड”
+        </span>
+      </div>
+    ),
     description:
-      "Buransh Foundation welcomes everyone to a beautiful journey through Uttarakhand. Uttarakhand at a glance is a land of the Gods, home to love, warmth, and rich cultural heritage, unmatched natural beauty. But..is this beauty.",
+      "Buransh Foundation welcomes everyone to a beautiful journey through Uttarakhand. Uttarakhand at a glance is a land of the Gods, home to love, warmth, and rich cultural heritage, unmatched natural beauty. But..is this beauty getting lost in psithurism.",
     variant: "slide1",
   },
   {
-    title:
-      "जैते-जैते छन सांस्कृतिक रीत, गढ़वाल-कुमाऊं की धड़कण ये जीत। ",
+    title: (
+      <div className="flex flex-col gap-1">
+        <span className="text-3xl lg:text-7xl font-bold ">
+          जैते-जैते&nbsp;छन&nbsp;सांस्कृतिक&nbsp;रीत,&nbsp;
+        </span>
+        <br />
+        <span className="text-3xl lg:text-7xl font-bold ">
+          गढ़वाल-कुमाऊं&nbsp;की&nbsp;धड़कण&nbsp;ये&nbsp;जीत
+        </span>
+      </div>
+    ),
     description:
       "We convey a love for the journey of traditions in Garhwal-Kumaon, celebrating the heart and spirit of these regions' cultural richness. ",
     variant: "slide2",
   },
   {
-    title: "🌿 सरसराती हवा, ठंडा पानी,पक गए बेड़ू, काफल की दानी। धार माटी कु मान, पन्याळा कु संमान! 🌿",
+    title: (
+      <div className="flex flex-col  gap-5 ">
+        <span className="text-3xl lg:text-6xl font-bold w-full">
+          सरसराती&nbsp;हवा,&nbsp;ठंडा&nbsp;पानी,
+        </span>
+        <span className="text-3xl lg:text-6xl font-bold ">
+         पक&nbsp;गए&nbsp;बेड़ू,काफल&nbsp;की&nbsp;दानी।&nbsp;
+        </span>
+        <span className="text-3xl lg:text-6xl font-bold ">
+          धार&nbsp;माटी&nbsp;कु&nbsp;मान, पन्याळा&nbsp;कु&nbsp;संमान!&nbsp;
+        </span>
+      </div>
+    ),
     description:
       "Join us in celebrating the vibrant festivals that showcase the rich cultural tapestry of Uttarakhand.",
     variant: "slide3",
@@ -52,7 +82,7 @@ export default function HeroBackground() {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % slidesContent.length);
-    }, 5000); // change slide every 5 seconds
+    }, 10000); // change slide every 10 seconds
     return () => clearInterval(interval);
   }, []);
 
@@ -62,7 +92,7 @@ export default function HeroBackground() {
       <AnimatePresence>
         <motion.div
           key={activeIndex}
-          className="relative z-20 flex flex-col h-full justify-center w-full lg:w-[50%] text-white space-y-3 p-3 lg:p-20"
+          className="relative z-20 flex flex-col h-full justify-center w-full lg:w-full text-white space-y-6 p-3 lg:p-20"
           initial="hidden"
           animate="visible"
           exit="hidden"
@@ -71,22 +101,28 @@ export default function HeroBackground() {
           <div className="flex items-center space-x-1">
             <GlobeAsiaAustraliaIcon className="w-4 text-green" />
             <p className="text-green text-sm font-semibold">
-              🌺 THE BURANSH FOUNDATION 🌺
+              THE BURANSH FOUNDATION
             </p>
           </div>
-          <motion.h1 className="text-4xl lg:text-7xl font-bold">
+          <motion.div className="w-full gap-5">
             {slidesContent[activeIndex].title}
-          </motion.h1>
-          <motion.p className="text-sm lg:text-base">
+          </motion.div>
+          <motion.p className="text-sm lg:text-base lg:w-[60%] flex space-y-5 gap-5">
             {slidesContent[activeIndex].description}
           </motion.p>
           <motion.div className="flex space-x-4" variants={buttonVariants}>
-            <button className="text-green bg-white py-3 px-10 rounded hover:bg-green hover:text-white transition-all">
+            <Link
+              href="/blog"
+              className="text-green bg-white py-3 px-10 rounded hover:bg-green hover:text-white transition-all"
+            >
               Explore
-            </button>
-            <button className="bg-transparent hover:bg-green text-green hover:text-white py-3 px-10 rounded transition-all border">
+            </Link>
+            <Link
+              href="/about"
+              className="bg-transparent hover:bg-green text-green hover:text-white py-3 px-10 rounded transition-all border"
+            >
               Read More
-            </button>
+            </Link>
           </motion.div>
         </motion.div>
       </AnimatePresence>

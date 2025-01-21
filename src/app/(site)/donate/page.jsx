@@ -1,4 +1,5 @@
 "use client";
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -17,15 +18,51 @@ const DonatePopup = () => {
   // Example usage
 
   return (
-    <div className="flex flex-col lg:flex-row w-screen min-h-screen lg:pr-0 lg:p-20 justify-center items-center pt-28">
+    <div className="flex flex-col lg:flex-row w-screen min-h-screen lg:pr-0 lg:p-20 justify-center items-center pt-28 bg-light-green-50">
+      <Head>
+        <title>Donate | Buransh Foundation</title>
+        <meta
+          name="description"
+          content="Support the people of Uttarakhand. Your donation helps provide education, empowerment, and sustainability to the region. Join us in creating lasting change."
+        />
+        <meta
+          name="keywords"
+          content="Donate, Buransh Foundation, Uttarakhand, Donation, Give Back, Charity, Support, Empowerment, Education, Sustainability"
+        />
+        <meta property="og:title" content="Donate | Buransh Foundation" />
+        <meta
+          property="og:description"
+          content="Join us in supporting the people of Uttarakhand by donating for education, empowerment, and sustainability. Together, we can create lasting change."
+        />
+        <meta
+          property="og:url"
+          content="https://www.buranshfoundation.in/donate"
+        />
+        <meta
+          property="og:image"
+          content="https://www.buranshfoundation.in/logo.jpg"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Donate | Buransh Foundation" />
+        <meta
+          name="twitter:description"
+          content="Support Uttarakhand's growth by donating. Your contribution helps create sustainable change."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.buranshfoundation.in/logo.jpg"
+        />
+      </Head>
       <div className="lg:w-[40%] flex flex-col space-y-5 p-3">
         <h1 className="text-5xl lg:text-6xl font-bold">
           Give Back to the Himalayas
         </h1>
         <p className="text-sm lg:text-base">
           Uttarakhand has been serving fresh air, water and soil for years.
-          People have been protecting culture for years. Now it&apos;s our time to
-          donate for the events that need our special attention.
+          People have been protecting culture for years. Now it&apos;s our time
+          to donate for the events that need our special attention.
         </p>
         <p className="text-sm lg:text-base">
           Your donation helps us bring education, empowerment, and
@@ -39,7 +76,10 @@ const DonatePopup = () => {
           >
             Donate
           </button>
-          <Link href={'/'} className="px-10 py-3 rounded border border-black text-sm ">
+          <Link
+            href={"/"}
+            className="px-10 py-3 rounded border border-black text-sm "
+          >
             Explore
           </Link>
         </div>
@@ -49,7 +89,7 @@ const DonatePopup = () => {
           src={"/assets/uttarakhandmask.png"}
           width={1000}
           height={1000}
-          className="w-[700px]"
+          className="w-[700px] bg-blend-multiply mix-blend-multiply"
         />
       </div>
       {showPopup && (

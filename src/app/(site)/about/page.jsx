@@ -1,27 +1,42 @@
 "use client";
-import Image from "next/image";
+import { motion } from "framer-motion";
 import Link from "next/link";
-import React from "react";
 import Counter from "../components/Counter/Counter";
+import Image from "next/image";
+import Head from "next/head";
 
 const Page = () => {
   return (
     <div className="flex flex-col w-screen h-full lg:pt-10">
-      <div className=" flex relative w-screen h-[400px]">
+      <Head>
+        <title>Buransh Foundation Story</title>
+        <meta name="description" content="A great foundation story." />
+      </Head>
+      <motion.div
+        initial={{ opacity: 0, y: -100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className=" flex relative w-screen h-[400px]"
+      >
         <Image
           src={"/assets/kumaon/env.jpg "}
           alt={"about"}
           fill
           className={"object-cover"}
         />
-      </div>
+      </motion.div>
       <div className="flex flex-col-reverse lg:flex-row w-full  lg:px-20 p-2">
-        <div className="flex flex-col w-full lg:w-[50%]">
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="flex flex-col w-full lg:w-[50%]"
+        >
           <div className="flex -translate-y-48 lg:-translate-y-7 justify-center items-center h-20 lg:w-96  z-10 bg-green text-white font-bold text-2xl lg:text-3xl">
             <span>About Buransh Foundation</span>
           </div>
           <div className="flex flex-col space-y-3 text-lg w-full">
-            <p>The Buransh Foundation: Preserving the Spirit of Uttarakhand</p>
+            <p>Growing Dreams, Changing Lives</p>
             <p>
               Over the coming years, The Buransh Foundation aims to establish
               itself as a pivotal force for the recognition and conservation of
@@ -30,29 +45,39 @@ const Page = () => {
               every element defining the state&apos;s essence is preserved for
               future generations.
             </p>
-            <h1 className="font-bold">Why Buransh?</h1>
+            <h1 className="font-bold">Symbolism of Buransh</h1>
             <p>
               The foundation derives its name from the iconic Buransh
               (Rhododendron arboreum) flower, a symbol of vitality and
               resilience native to Uttarakhand. Like this vibrant flower, we aim
               to thrive in challenging terrains while contributing positively to
               the environment and society. The Buransh Foundation sustains
-              Uttarakhand's legacy
+              Uttarakhand&apos;s legacy
             </p>
           </div>
-        </div>
-        <div className="flex flex-col justify-center pt-16 lg:pt-0 lg:p-20 lg:px-32 w-full lg:w-[50%] lg:space-y-5">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="flex flex-col justify-center pt-16 lg:pt-0 lg:p-20 lg:px-32 w-full lg:w-[50%] lg:space-y-5"
+        >
           <p className=" lg:text-lg font-semibold">Overview</p>
           <h2 className="text-3xl lg:text-5xl font-bold">About Us</h2>
-        </div>
+        </motion.div>
       </div>
       <div className="flex flex-col bg-[#eeeff1] lg:px-20 py-20 mt-10 justify-center items-center space-y-10">
-        <div className="flex flex-col space-y-5 justify-center items-center p-1">
-          <div>
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="flex flex-col space-y-5 justify-center items-center p-1"
+        >
+          <div className="animate-pulse">
             <h2 className="text-4xl font-bold text-center ">
               आप सभी का पहाड़ों में स्वागत है।
             </h2>
-            <p className="text-2xl font-bold text-center t mb-2">
+            <p className="text-2xl font-bold text-center t mb-2 ">
               “MOUNTAINS WELCOME YOU ALL”
             </p>
           </div>
@@ -65,8 +90,8 @@ const Page = () => {
             awareness and encouraging students to get involved, we aim to build
             a cleaner, greener, and more sustainable future.
           </p>
-        </div>
-        <Link href={"/blogs"}>
+        </motion.div>
+        <Link href={"/blog"}>
           <h2 className=" bg-green hover:bg-transparent hover:shadow-md hover:text-green transition-all px-5 py-3 self-center w-fit rounded-full  text-white font-medium hover:border">
             Check Out Our Work
           </h2>
@@ -77,14 +102,17 @@ const Page = () => {
             <h2 className="text-5xl font-bold text-green">Insights</h2>
           </div>
           <div className="flex flex-col lg:flex-row items-center justify-center  w-full space-y-3 lg:space-y-0 lg:space-x-10">
-            <div className="flex space-x-5">
-              <h2 className="font-bold text-4xl text-black text-center">
+            <Link
+              href={
+                "https://docs.google.com/spreadsheets/d/1Zhzzk3TtfzfB0yJBLMR4iL7Ud2mrK8WJlaf80nDpDuY/edit?usp=sharing"
+              }
+              className="flex space-x-5 underline text-light-green-900"
+            >
+              <h2 className="font-bold text-4xl  text-center">
                 <Counter value={50} direction="up" />+
               </h2>
-              <h2 className="font-bold text-4xl text-black text-center">
-                Donors
-              </h2>
-            </div>
+              <h2 className="font-bold text-4xl k text-center">Donors</h2>
+            </Link>
             <span className="bg-[#cacaca] w-[2px] h-full "></span>
             <div className="flex space-x-5">
               <h2 className="font-bold text-4xl text-black text-center">
@@ -107,8 +135,21 @@ const Page = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col lg:flex-row w-full  lg:px-20 py-20 p-2">
-        <div className="flex flex-col w-full lg:w-[40%] space-y-10">
+      <div className="flex justify-center text-center items-center p-5">
+        <h2 className="text-light-green-900 font-bold text-2xl">
+          The Buransh Foundation: Preserving the Spirit of Uttarakhand
+        </h2>
+      </div>
+      <div
+        id="mission"
+        className="flex flex-col lg:flex-row w-full  lg:px-20 py-20 p-2"
+      >
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="flex flex-col w-full lg:w-[40%] space-y-10"
+        >
           <h2 className="text-4xl font-bold">
             We hustle to count more events <br /> with our foundation
           </h2>
@@ -136,14 +177,14 @@ const Page = () => {
               Let&apos;s nurture the beauty around us, one step at a time.
             </p>
           </div>
-        </div>
+        </motion.div>
         <div className="flex flex-col justify-center pt-16 lg:pt-0 lg:p-20 lg:px-32 w-full lg:w-[60%] lg:space-y-5">
           <iframe
             width="700"
             height="400"
             className="w-full h-full lg:w-[700px] lg:h-[400px]"
-            src="https://www.youtube.com/embed/T3oq1ccmcP4"
-            title="Thalaivaa (HD) - Thalapathy Vijay Blockbuster Hindi Dubbed Movie | Amala Paul, Sathyaraj"
+            src="https://www.youtube.com/embed/T3oq1ccmcP4?autoplay=1&mute=1"
+            title="Buransh Foundation"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"

@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import BlogCard from "../components/Card/BlogCard";
+import Head from "next/head";
 
 const Page = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -48,6 +49,13 @@ const Page = () => {
 
   return (
     <div className="flex flex-col min-h-screen w-full p-3 lg:p-20 space-y-10 pt-40">
+      <Head>
+        <title>Buransh Foundation Blogs</title>
+        <meta
+          name="description"
+          content="Read more about our journey and efforts at Buransh Foundation."
+        />
+      </Head>
       <div className="flex flex-col justify-center items-center space-y-2">
         <h1 className="text-4xl font-bold lg:text-5xl text-center">
           Blogs & News

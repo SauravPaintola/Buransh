@@ -11,7 +11,7 @@ const Testimonials = () => {
             </h1>
             <h3 className="lg:text-xl mb-5 font-light">
               Discover what our volunteers have to say about the Buransh
-              Foundation and the difference they are (and will) create with us.
+              Foundation 
             </h3>
             <div className="text-center mb-10">
               <span className="inline-block w-1 h-1 rounded-full bg-green/30 ml-1"></span>
@@ -40,7 +40,7 @@ const Testimonials = () => {
                       </div>
                     </div>
                     <div className="w-full">
-                      <p className="text-sm leading-tight line-clamp-3">
+                      <p className="text-sm line-clamp-3">
                         {testimonial.message
                           .replace(/<[^>]+>/g, "")
                           .substring(0, 100)}

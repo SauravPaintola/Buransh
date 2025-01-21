@@ -74,7 +74,7 @@ function NavList() {
         className="p-1 font-medium"
       >
         <Link
-          href="/gallery"
+          href="/contact"
           className="flex items-center hover:text-blue-500 transition-colors text-white"
         >
           Contact
@@ -123,7 +123,7 @@ export default function NavbarSimple() {
       <Navbar color="transparent" className=" px-6 py-5 w-full">
         <div className="flex items-center justify-between text-white">
           <Link
-            as="a"
+           
             href="/"
             className="mr-4 cursor-pointer"
           >

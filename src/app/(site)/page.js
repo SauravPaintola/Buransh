@@ -77,7 +77,7 @@ const Page = () => {
       </div>
       {/* About Section */}
       <div className="flex flex-col lg:flex-row  lg:justify-center w-full min-h-screen items-center lg:space-x-10 py-10 ">
-        <div className="lg:w-[35%] w-full  lg:h-[650px] rounded-lg overflow-hidden p-5">
+        <div className="lg:w-[35%] w-full rounded-lg overflow-hidden p-5">
           <img className="h-full w-full " src="/assets/buranshgif.gif" alt="" />
         </div>
         <div className="w-full lg:w-[35%] flex flex-col justify-center space-y-3 p-3">
@@ -93,7 +93,7 @@ const Page = () => {
             Before trying to protect and take a step towards something. We are
             responsible to know the roots of it for ourselves as well. Our
             website will be the online vision of UTTARAKHAND. We would try to
-            put all of the information that we can and that we understand. We
+            put all of the information that we can, and that we understand. We
             will make you familiar with the districts, food, culture, travel,
             environment and mythological beliefs of Uttarakhand . Our offline
             face is the traditional art of bringing a union together to help the
