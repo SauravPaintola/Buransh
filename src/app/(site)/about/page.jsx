@@ -106,12 +106,12 @@ const Page = () => {
               href={
                 "https://docs.google.com/spreadsheets/d/1Zhzzk3TtfzfB0yJBLMR4iL7Ud2mrK8WJlaf80nDpDuY/edit?usp=sharing"
               }
-              className="flex space-x-5 underline text-light-green-900"
+              className="flex space-x-5  text-light-green-900"
             >
               <h2 className="font-bold text-4xl  text-center">
                 <Counter value={50} direction="up" />+
               </h2>
-              <h2 className="font-bold text-4xl k text-center">Donors</h2>
+              <h2 className="font-bold text-4xl k text-center underline">Donors</h2>
             </Link>
             <span className="bg-[#cacaca] w-[2px] h-full "></span>
             <div className="flex space-x-5">
