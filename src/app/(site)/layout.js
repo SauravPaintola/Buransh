@@ -18,7 +18,6 @@ export const metadata = {
   keywords:
     "Buransh Foundation, social service, community upliftment, education, awareness campaigns, empowerment, charity, NGO, Uttarakhand , Saurav Paintola",
   author: "Buransh Foundation",
-  viewport: "width=device-width, initial-scale=1",
   og: {
     title: "Buransh Foundation: Transforming Lives Through Social Service",
     description:

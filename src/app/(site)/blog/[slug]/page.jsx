@@ -4,6 +4,8 @@ import axios from "axios";
 import { useParams } from "next/navigation";
 import { useState, useEffect } from "react";
 import "./style.css";
+import getBlogs from "@/app/utils/getblogs";
+import getblogbyslug from "@/app/utils/getblogbyslug";
 // BlogDetails Component
 const BlogDetails = ({ blog, otherPosts }) => {
   console.log(otherPosts);
@@ -94,3 +96,58 @@ const Page = () => {
 };
 
 export default Page;
+
+export async function generateMetadata({ params }) {
+  const slug = await params.blogid;
+  const post = await getblogbyslug(slug);
+  try {
+    return {
+      title: post.title,
+      description: post.description,
+      keywords: post.tags,
+      openGraph: {
+        title: post.title,
+        description: post.description,
+        url: `https://buranshfoundation.in/blog/${slug}`,
+        images: [
+          {
+            url: post.mainImg,
+            alt: post.title,
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: post.title,
+        description: post.description,
+        images: [post.mainImg],
+      },
+    };
+  } catch (error) {
+    return {
+      title: "Blog Post",
+      description: "Read our latest blog post",
+    };
+  }
+}
+
+export async function generateStaticParams() {
+  try {
+    const posts = await getBlogs();
+
+    // Ensure that `posts` is an array
+    if (!Array.isArray(posts)) {
+      throw new Error("Expected an array of posts");
+    }
+
+    return posts.map((post) => ({
+      slug: post.slug,
+    }));
+  } catch (error) {
+    // Log the error or handle it as needed
+    console.error("Failed to generate static params:", error);
+
+    // Return an empty array in case of error
+    return [];
+  }
+}
